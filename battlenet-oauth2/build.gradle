@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'fb-like'
+
+    publishedGroupId = 'com.bndroid'
+    libraryName = 'Battlenet OAuth2'
+    artifact = 'battlenet-oauth2'
+
+    libraryDescription = 'Library to log in Battlenet (Blizzard) with OAuth2 system.'
+
+    siteUrl = 'https://github.com/dementhius/battlenet-oauth2'
+    gitUrl = 'https://github.com/dementhius/battlenet-oauth2.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'dementhius'
+    developerName = 'Aner'
+    developerEmail = 'dementhsoft@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -31,3 +55,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
     testCompile 'junit:junit:4.12'
 }
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
