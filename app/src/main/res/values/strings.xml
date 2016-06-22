@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BNDroidOauth</string>
+
+    <string name="tv_battlenet_oauth">Battlenet OAuth2</string>
+
+    <!-- Buttons -->
+    <string name="btn_login">Login</string>
+    <string name="btn_clear">Clear credentials</string>
+    <string name="btn_wow">WoW characters</string>
+    <string name="btn_sc2">SC2 Profile</string>
+    <string name="btn_battletag">Battletag</string>
+</resources>
