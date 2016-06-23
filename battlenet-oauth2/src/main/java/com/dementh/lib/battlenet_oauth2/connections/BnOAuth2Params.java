@@ -41,8 +41,6 @@ public class BnOAuth2Params implements Parcelable {
         }
 
         this.scope = sb.toString().substring(0, sb.toString().length() - 1);
-
-        //this.apiUrl = apiUrl;
     }
 
     public String getClientId() {
@@ -101,6 +99,14 @@ public class BnOAuth2Params implements Parcelable {
         this.authorizationServerEncodedUrl = authorizationServerEncodedUrl;
     }
 
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
+    }
+
     public Credential.AccessMethod getAccessMethod() {
         return BnQueryParamsAccessMethod.getInstance();
     }
@@ -117,6 +123,7 @@ public class BnOAuth2Params implements Parcelable {
         dest.writeString(this.scope);
         dest.writeString(this.rederictUri);
         dest.writeString(this.userId);
+        dest.writeString(this.zone);
         dest.writeString(this.tokenServerUrl);
         dest.writeString(this.authorizationServerEncodedUrl);
     }
@@ -127,6 +134,7 @@ public class BnOAuth2Params implements Parcelable {
         this.scope = in.readString();
         this.rederictUri = in.readString();
         this.userId = in.readString();
+        this.zone = in.readString();
         this.tokenServerUrl = in.readString();
         this.authorizationServerEncodedUrl = in.readString();
     }
@@ -142,12 +150,4 @@ public class BnOAuth2Params implements Parcelable {
             return new BnOAuth2Params[size];
         }
     };
-
-    public String getZone() {
-        return zone;
-    }
-
-    public void setZone(String zone) {
-        this.zone = zone;
-    }
 }

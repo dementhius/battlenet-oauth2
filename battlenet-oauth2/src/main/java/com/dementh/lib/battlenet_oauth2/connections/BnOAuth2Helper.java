@@ -49,8 +49,12 @@ public class BnOAuth2Helper {
         Log.i(BnConstants.TAG, "retrieveAndStoreAccessToken for code ".concat(authorizationCode));
         TokenResponse tokenResponse = flow.newTokenRequest(authorizationCode).setScopes(convertScopesToString(oauth2Params.getScope())).setRedirectUri(oauth2Params.getRederictUri()).execute();
         Log.i(BnConstants.TAG, "Found tokenResponse");
-        Log.i(BnConstants.TAG, "Access Token : ".concat(tokenResponse.getAccessToken()));
-        Log.i(BnConstants.TAG, "Refresh Token : ".concat(tokenResponse.getRefreshToken()));
+        if (null != tokenResponse.getAccessToken()) {
+            Log.i(BnConstants.TAG, "Access Token : ".concat(tokenResponse.getAccessToken()));
+        }
+        if (null != tokenResponse.getRefreshToken()) {
+            Log.i(BnConstants.TAG, "Refresh Token : ".concat(tokenResponse.getRefreshToken()));
+        }
         flow.createAndStoreCredential(tokenResponse, oauth2Params.getUserId());
     }
 
