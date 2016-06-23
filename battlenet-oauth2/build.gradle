@@ -5,7 +5,7 @@ ext {
     bintrayName = 'battlenet-oauth2'
 
     publishedGroupId = 'com.bndroid'
-    libraryName = 'Battlenet OAuth2'
+    libraryName = 'battlenet-oauth2'
     artifact = 'battlenet-oauth2'
 
     libraryDescription = 'Library to log in Battlenet (Blizzard) with OAuth2 system.'
@@ -57,5 +57,5 @@ dependencies {
 }
 
 // Place it at the end of the file
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+apply from: 'https://raw.githubusercontent.com/dementhius/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/dementhius/JCenter/master/bintrayv1.gradle'
