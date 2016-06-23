@@ -15,17 +15,6 @@ dependencies {
 }
 ```
 
-Or if you prefer using Maven, you just only need to add the following dependency in your pom.xml
-
-```sh
-<dependency>
-  <groupId>com.bndroid</groupId>
-  <artifactId>battlenet-oauth2</artifactId>
-  <version>0.0.1</version>
-  <type>pom</type>
-</dependency>
-```
-
 # Usage
 ### Not in APP
 First of all, you have to create a developer account in Battle.net, you can sign up in [this link](https://dev.battle.net/member/register).
