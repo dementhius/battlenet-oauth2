@@ -8,7 +8,13 @@ import com.google.api.client.auth.oauth2.Credential;
 
 public class BnOAuth2Params implements Parcelable {
 
-    private static final String ZONE_DEFAULT = "zone";
+    private final String TOKEN_URL_CN = "https://www.battlenet.com.cn/oauth/token";
+    private final String AUTH_URL_CN = "https://www.battlenet.com.cn/oauth/authorize";
+
+    private final String TOKEN_URL_NOT_CN = "https://zone.battle.net/oauth/token";
+    private final String AUTH_URL_NOT_CN = "https://zone.battle.net/oauth/authorize";
+
+    private final String ZONE_DEFAULT = "zone";
 
     private String clientId;
     private String clientSecret;
@@ -16,19 +22,27 @@ public class BnOAuth2Params implements Parcelable {
     private String rederictUri;
     private String userId;
     private String zone;
-
-    private String tokenServerUrl = "https://zone.battle.net/oauth/token";
-    private String authorizationServerEncodedUrl = "https://zone.battle.net/oauth/authorize";
+    private String tokenServerUrl;
+    private String authorizationServerEncodedUrl;
 
     public BnOAuth2Params(String clientId, String clientSecret, String zone, String rederictUri, String userId, String... scopes) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.zone = zone;
-        this.tokenServerUrl = tokenServerUrl.replace(ZONE_DEFAULT, zone);
-        this.authorizationServerEncodedUrl = authorizationServerEncodedUrl.replace(ZONE_DEFAULT, zone);
+
+        // If we login in China servers, we have different URL
+        if (BnConstants.ZONE_CHINA.equalsIgnoreCase(zone)) {
+            this.tokenServerUrl = TOKEN_URL_CN;
+            this.authorizationServerEncodedUrl = AUTH_URL_CN;
+        } else {
+            this.tokenServerUrl = TOKEN_URL_NOT_CN.replace(ZONE_DEFAULT, zone);
+            this.authorizationServerEncodedUrl = AUTH_URL_NOT_CN.replace(ZONE_DEFAULT, zone);
+        }
+
         this.rederictUri = rederictUri;
         this.userId = userId;
 
+        // Create SCOPES with required pattern (Scope+Scope+...)
         StringBuilder sb = new StringBuilder();
         if (null != scopes && 0< scopes.length) {
             for (String scope: scopes) {

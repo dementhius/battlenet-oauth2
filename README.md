@@ -3,7 +3,7 @@ Library to log in Battlenet (Blizzard) with OAuth2 system.
 
 # Version
 
-0.0.1
+0.0.2
 
 # Installation
 
@@ -11,8 +11,19 @@ To use this library in your android project, just simply add the following depen
 
 ```sh
 dependencies {
-   compile 'com.bndroid:battlenet-oauth2:0.0.1'
+   compile 'com.github.dementhius:battlenet-oauth2:0.0.2'
 }
+```
+
+Or if you prefer using Maven, you just only need to add the following dependency in your pom.xml
+
+```sh
+<dependency>
+  <groupId>com.github.dementhius</groupId>
+  <artifactId>battlenet-oauth2</artifactId>
+  <version>0.0.2</version>
+  <type>pom</type>
+</dependency>
 ```
 
 # Usage
@@ -42,7 +53,7 @@ bnOAuth2Params = new BnOAuth2Params("Your client Id", "Your client secret", "zon
 
 On the one hand, to select the zone, you just only need to select one of them from BnConstants
 ```
-BnConstants.ZONE_EUROPE / BnConstants.ZONE_UNITED_STATES
+BnConstants.ZONE_EUROPE / BnConstants.ZONE_UNITED_STATES / BnConstants.ZONE_KOREA / BnConstants.ZONE_TAIWAN / BnConstants.ZONE_CHINA
 ```
 
 On the other hand, you can add all the scopes you want, separated by commas (Nowadays, Blizzard only provides Starcraft 2 and World of Warcraft scopes).
@@ -60,9 +71,13 @@ intent.putExtra(BnConstants.BUNDLE_REDIRECT_ACTIVITY, DestinyActivity.class);
 startActivity(intent);
 ```
 
-_Complete example in [this link](https://github.com/dementhius/battlenet-oauth2/tree/master/app)_
+_Complete example [here](https://github.com/dementhius/battlenet-oauth2/tree/master/app)_
 
 # Change Logs
+
+### v-0.0.2
+
+Added more zones (Korea, Taiwan and China)
 
 ### v-0.0.1
 

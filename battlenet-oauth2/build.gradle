@@ -4,7 +4,7 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'battlenet-oauth2'
 
-    publishedGroupId = 'com.bndroid'
+    publishedGroupId = 'com.github.dementhius'
     libraryName = 'battlenet-oauth2'
     artifact = 'battlenet-oauth2'
 
@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/dementhius/battlenet-oauth2'
     gitUrl = 'https://github.com/dementhius/battlenet-oauth2.git'
 
-    libraryVersion = '0.0.1'
+    libraryVersion = '0.0.2'
 
     developerId = 'dementhius'
     developerName = 'Aner'
