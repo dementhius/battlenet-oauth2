@@ -123,7 +123,7 @@ public class BnOAuthAccessTokenActivity extends AppCompatActivity {
         }
 
         private String extractCodeFromUrl(String url) throws Exception {
-            final String encodedCode = url.substring(bnOAuth2Params.getRederictUri().length() + 7, url.length());
+            final String encodedCode = url.substring(bnOAuth2Params.getRederictUri().length() + 6, url.length());
             return URLDecoder.decode(encodedCode, "UTF-8");
         }
 
